@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="org.laneveraroja.autologin"
+      version="0.1.0">
+
+    <name>autologin</name>
+
+    <description>Sample PhoneGap autologin Plugin</description>
+    <license>laneveraroja.com</license>
+    <keywords>phonegap,autologin</keywords>
+ 
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+ 
+    <js-module src="www/autologin.js" name="Autologin">
+        <clobbers target="phonegap.autologin" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Autologin">
+                <param name="android-package" value="org.laneveraroja.autologin.Autologin"/>
+            </feature>
+        </config-file> 
+        <source-file src="src/Autologin.java" target-dir="src/org/laneveraroja/autologin" />      
+     </platform>          
+</plugin>
